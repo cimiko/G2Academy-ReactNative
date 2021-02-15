@@ -13,7 +13,7 @@ import {
 import {
     Colors,
 } from 'react-native/Libraries/NewAppScreen';
-import { Header } from '../../ui-kit/Organism'
+import { NavBar } from '../../ui-kit/Module'
 
 function Experience() {
     return (
@@ -24,7 +24,7 @@ function Experience() {
                     contentInsetAdjustmentBehavior="automatic"
                     style={styles.scrollView}>
 
-                    <Header headOne={styles.navItemOne} headTwo={styles.navItemTwo} headThree={styles.navItemThree} />
+                    <NavBar headOne={styles.navItemOne} headTwo={styles.navItemTwo} headThree={styles.navItemThree} />
 
                     <View style={styles.body}>
                         <View>
@@ -47,7 +47,7 @@ function Experience() {
                         </View>
                         <View style={styles.sectionContainer}>
                             <Text style={styles.sectionTitle}>
-                            PT JAYASAKTI SUKSES MANDIRI{"\n"}
+                                PT JAYASAKTI SUKSES MANDIRI{"\n"}
                                 <Text style={styles.sectionSmall}>(Jun 2018 - Ags 2018)</Text>
                             </Text>
                             <FlatList
@@ -62,7 +62,7 @@ function Experience() {
                         </View>
                         <View style={styles.sectionContainer}>
                             <Text style={styles.sectionTitle}>
-                            PT BALADHIKA KARYA RAHARJA{"\n"}
+                                PT BALADHIKA KARYA RAHARJA{"\n"}
                                 <Text style={styles.sectionSmall}>(Ags 2018 - Nov 2018)</Text>
                             </Text>
                             <FlatList
@@ -76,7 +76,7 @@ function Experience() {
                         </View>
                         <View style={styles.sectionContainer}>
                             <Text style={styles.sectionTitle}>
-                            PT MAHKOTA SENTOSA UTAMA{"\n"}
+                                PT MAHKOTA SENTOSA UTAMA{"\n"}
                                 <Text style={styles.sectionSmall}>(Des 2018 - Sep 2019)</Text>
                             </Text>
                             <FlatList
@@ -104,13 +104,11 @@ const styles = StyleSheet.create({
         right: 0,
     },
     body: {
-        backgroundColor: Colors.white,
+        backgroundColor: '#FFFAFA'
     },
     sectionContainer: {
         marginTop: 32,
-        paddingHorizontal: 24,
-        // flexDirection: 'row',
-        // alignContent: 'center'
+        paddingHorizontal: 24
     },
     sectionHeader: {
         fontSize: 28,
@@ -121,7 +119,7 @@ const styles = StyleSheet.create({
         fontSize: 15
     },
     item: {
-        fontSize:16,
+        fontSize: 16,
         marginTop: 5
     },
     sectionTitle: {
@@ -166,7 +164,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderBottomWidth: 0,
         borderTopRightRadius: 10,
-        borderTopLeftRadius: 10
+        borderTopLeftRadius: 10,
+        backgroundColor: '#FFFAFA'
     },
     navItemThree: {
         flex: 1,

@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, StyleSheet, Text } from 'react-native'
-import { NavBar } from '../../Module'
 import profile from '../../File/Img/profile.jpg';
 import { Avatar } from 'react-native-elements';
 
@@ -26,7 +25,6 @@ function Header({headOne, headTwo, headThree}) {
                     <Text style={styles.sectionDescription}>ARSITEKTUR DRAFTER</Text>
                 </View>
             </View>
-            <NavBar headOne={headOne} headTwo={headTwo} headThree={headThree} />
         </View>
     )
 }

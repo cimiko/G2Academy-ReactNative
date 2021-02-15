@@ -1,5 +1,4 @@
 import React from 'react'
-import { Linking } from 'react-native';
 import {
     SafeAreaView,
     StyleSheet,
@@ -12,7 +11,7 @@ import {
 import {
     Colors,
 } from 'react-native/Libraries/NewAppScreen';
-import { Header } from '../../ui-kit/Organism'
+import { NavBar, Rating } from '../../ui-kit/Module'
 
 function Skills() {
     return (
@@ -23,69 +22,47 @@ function Skills() {
                     contentInsetAdjustmentBehavior="automatic"
                     style={styles.scrollView}>
 
-                    <Header headOne={styles.navItemOne} headTwo={styles.navItemTwo} headThree={styles.navItemThree} />
+                    <NavBar headOne={styles.navItemOne} headTwo={styles.navItemTwo} headThree={styles.navItemThree} />
 
-                    <View>
-                        <Text style={styles.sectionHeader}>PROFESSIONAL SKILLS</Text>
-                    </View>
 
                     <View style={styles.body}>
-                        <View style={styles.sectionContainer}>
-                            <Text style={styles.sectionTitle}>
-                                Microsoft Office</Text>
-                            <Text style={styles.sectionDescription}>
-                                Hartono
-                            </Text>
+                        <View>
+                            <Text style={styles.sectionHeader}>PROFESSIONAL SKILLS</Text>
                         </View>
-                        <View style={styles.sectionContainer}>
-                            <Text style={styles.sectionTitle}>Date Of Birth</Text>
-                            <Text style={styles.sectionDescription}>
-                                08 November 1996
-                            </Text>
+                        <Rating text="Microsoft Office" rating={5} />
+                        <Rating text="Autocad 2D & 3D" rating={7} />
+                        <Rating text="Google SketchUp" rating={6} />
+                        <Rating text="MasterCam" rating={5} />
+                        <Rating text="FluidSim" rating={7} />
+                        <Rating text="HTML & CSS" rating={5} />
+                        <Rating text="JavaScript" rating={4} />
+                        <Rating text="JQUERY" rating={4} />
+                        <Rating text="PHP" rating={3} />
+                        <Rating text="Laravel" rating={5} />
+                        <Rating text="Python" rating={2} />
+                        <Rating text="Express JS" rating={5} />
+                        <Rating text="Java" rating={3} />
+                        <Rating text="UI/UX" rating={4} />
+                        <Rating text="SEO" rating={2} />
+                        <Rating text="SAP ERP" rating={4} />
+                        <Rating text="Adobe Photoshop" rating={5} />
+                        <Rating text="Adobe Illustrator" rating={5} />
+                        <Rating text="Final Cut Pro" rating={4} />
+                    </View>
+
+
+                    <View style={styles.body}>
+                        <View>
+                            <Text style={styles.sectionHeader}>PERSONAL SKILLS</Text>
                         </View>
-                        <View style={styles.sectionContainer}>
-                            <Text style={styles.sectionTitle}>Address</Text>
-                            <Text style={styles.sectionDescription}>
-                                Jl. 20 Desember No.81, Pegadungan, Kalideres, Jakarta Barat.
-                            </Text>
-                        </View>
-                        <View style={styles.sectionContainer}>
-                            <Text style={styles.sectionTitle}>GIT Hub</Text>
-                            <Text style={styles.sectionDescription}
-                                onPress={() => Linking.openURL('https://github.com/cimiko')}>
-                                github.com/cimiko
-                            </Text>
-                        </View>
-                        <View style={styles.sectionContainer}>
-                            <Text style={styles.sectionTitle}>Awards</Text>
-                            <Text style={styles.sectionDescription}>
-                                JUARA 3 NETWORKING - BSI
-                            </Text>
-                        </View>
-                        <View style={styles.sectionContainer}>
-                            <Text style={styles.sectionTitle}>Phone Number</Text>
-                            <Text style={styles.sectionDescription}>
-                                0812-1327-3727
-                            </Text>
-                        </View>
-                        <View style={styles.sectionContainer}>
-                            <Text style={styles.sectionTitle}>Email</Text>
-                            <Text style={styles.sectionDescription}>
-                                private.hartono@gmail.com
-                            </Text>
-                        </View>
-                        <View style={styles.sectionContainer}>
-                            <Text style={styles.sectionTitle}>Facebook</Text>
-                            <Text style={styles.sectionDescription}>
-                                華黃 (Hartono Wijaya)
-                            </Text>
-                        </View>
-                        <View style={styles.sectionContainer}>
-                            <Text style={styles.sectionTitle}>Instagram</Text>
-                            <Text style={styles.sectionDescription}>
-                                jishucimiko
-                            </Text>
-                        </View>
+                        <Rating text="Organisation" rating={6} />
+                        <Rating text="Communication" rating={5} />
+                        <Rating text="Interpersonal Skills" rating={5} />
+                        <Rating text="Multitasking" rating={5} />
+                        <Rating text="Transferable Skills" rating={5} />
+                        <Rating text="Computer Skills" rating={5} />
+                        <Rating text="Problem-solving" rating={4} />
+                        <Rating text="Management Skills" rating={4} />
                     </View>
                 </ScrollView>
             </SafeAreaView>
@@ -102,7 +79,8 @@ const styles = StyleSheet.create({
         right: 0,
     },
     body: {
-        backgroundColor: Colors.white,
+        backgroundColor: '#FFFAFA',
+        paddingBottom: 20
     },
     sectionContainer: {
         marginTop: 32,
@@ -111,9 +89,12 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         justifyContent: 'space-between'
     },
+    rate: {
+        marginTop: -35
+    },
     sectionHeader: {
         fontSize: 28,
-        marginTop: 10,
+        marginTop: 50,
         marginLeft: 10
     },
     sectionTitle: {
@@ -168,7 +149,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderBottomWidth: 0,
         borderTopRightRadius: 10,
-        borderTopLeftRadius: 10
+        borderTopLeftRadius: 10,
+        backgroundColor: '#FFFAFA'
     }
 });
 

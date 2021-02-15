@@ -1,20 +1,20 @@
 import React from 'react'
-import { Linking } from 'react-native';
 import {
     SafeAreaView,
     StyleSheet,
     ScrollView,
     View,
     Text,
-    StatusBar
+    StatusBar,
+    Linking
 } from 'react-native';
 
 import {
     Colors,
 } from 'react-native/Libraries/NewAppScreen';
-import { Header } from '../../ui-kit/Organism'
+import { NavBar } from '../../ui-kit/Module'
 
-function Home({ headOne, headTwo, headThree }) {
+function Home() {
     return (
         <>
             <StatusBar barStyle="dark-content" />
@@ -23,7 +23,7 @@ function Home({ headOne, headTwo, headThree }) {
                     contentInsetAdjustmentBehavior="automatic"
                     style={styles.scrollView}>
 
-                    <Header headOne={styles.navItemOne} headTwo={styles.navItemTwo} headThree={styles.navItemThree} />
+                    <NavBar headOne={styles.navItemOne} headTwo={styles.navItemTwo} headThree={styles.navItemThree} />
 
                     <View style={styles.body}>
                         <View style={styles.sectionContainer}>
@@ -60,25 +60,29 @@ function Home({ headOne, headTwo, headThree }) {
                         </View>
                         <View style={styles.sectionContainer}>
                             <Text style={styles.sectionTitle}>Phone Number</Text>
-                            <Text style={styles.sectionDescription}>
+                            <Text style={styles.sectionDescription}
+                                onPress={() => Linking.openURL('sms:+6281213273727')}>
                                 0812-1327-3727
                             </Text>
                         </View>
                         <View style={styles.sectionContainer}>
                             <Text style={styles.sectionTitle}>Email</Text>
-                            <Text style={styles.sectionDescription}>
+                            <Text style={styles.sectionDescription}
+                                onPress={() => Linking.openURL('mailto:private.hartono@gmail.com')}>
                                 private.hartono@gmail.com
                             </Text>
                         </View>
                         <View style={styles.sectionContainer}>
                             <Text style={styles.sectionTitle}>Facebook</Text>
-                            <Text style={styles.sectionDescription}>
+                            <Text style={styles.sectionDescription}
+                                onPress={() => Linking.openURL('https://www.facebook.com/hartono.selalu')}>
                                 華黃 (Hartono Wijaya)
                             </Text>
                         </View>
                         <View style={styles.sectionContainer}>
                             <Text style={styles.sectionTitle}>Instagram</Text>
-                            <Text style={styles.sectionDescription}>
+                            <Text style={styles.sectionDescription}
+                                onPress={() => Linking.openURL('https://www.instagram.com/jishucimiko/')}>
                                 jishucimiko
                             </Text>
                         </View>
@@ -98,7 +102,7 @@ const styles = StyleSheet.create({
         right: 0,
     },
     body: {
-        backgroundColor: Colors.white,
+        backgroundColor: '#FFFAFA',
     },
     sectionContainer: {
         marginTop: 32,
@@ -137,7 +141,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderBottomWidth: 0,
         borderTopRightRadius: 10,
-        borderTopLeftRadius: 10
+        borderTopLeftRadius: 10,
+        backgroundColor: '#FFFAFA'
     },
     navItemTwo: {
         flex: 1,
