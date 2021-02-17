@@ -56,7 +56,7 @@ const App = () => {
             <Text style={styles.height}>Height</Text>
             <Text style={styles.mass}>Mass</Text>
           </View>
-          <View>
+          <View style={styles.data}>
             <FlatList
               data={data}
               renderItem={({ item }) => (
@@ -82,6 +82,9 @@ const styles = StyleSheet.create({
   loader:{
     zIndex: 999,
 
+  },
+  data:{
+    paddingBottom: 50
   },
   engine: {
     position: 'absolute',
