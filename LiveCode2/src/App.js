@@ -81,7 +81,10 @@ const styles = StyleSheet.create({
   },
   loader:{
     zIndex: 999,
-
+    flex: 1,
+    justifyContent: 'center',
+    alignContent: 'center',
+    height: 400
   },
   data:{
     paddingBottom: 50
