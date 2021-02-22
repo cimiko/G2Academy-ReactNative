@@ -23,7 +23,7 @@ function Checkout({ navigation }) {
 
         const totalHarga = total.reduce((acc, curr) => acc + curr, 0)
 
-        setTotalPrice(totalHarga.toFixed(2))
+        setTotalPrice(totalHarga)
     }, [dataProduct])
 
     addQty = (i) => {
@@ -95,7 +95,7 @@ function Checkout({ navigation }) {
                 <View style={styles.navPrice}>
                     <View>
                         <Text>Total Harga</Text>
-                        <Text style={styles.totalPrice}>{totalPrice ? `$ ${totalPrice}` : '-'}</Text>
+                        <Text style={styles.totalPrice}>{totalPrice ? `$ ${totalPrice.toFixed(2)}` : '-'}</Text>
                     </View>
                     <Button
                         title={`Buy (${dataProduct.length})`}
