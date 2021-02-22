@@ -130,8 +130,6 @@ const styles = StyleSheet.create({
     },
     body: {
         flex: 9,
-        // backgroundColor: 'green',
-        // height: 780
     },
     row: {
         flex: 1,
