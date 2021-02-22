@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     search: {
-        // backgroundColor: 'blue',
         height: 50,
         borderWidth: 1,
         marginHorizontal: 20,

@@ -142,8 +142,6 @@ const styles = StyleSheet.create({
     },
     body: {
         flex: 9,
-        // backgroundColor: 'green',
-        // height: 780
     },
     row: {
         flexDirection: 'row'
@@ -216,7 +214,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingHorizontal: 20,
         paddingVertical: 10,
-        // backgroundColor: 'red'
     },
     btn: {
         width: 180,
