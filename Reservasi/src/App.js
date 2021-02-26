@@ -11,7 +11,6 @@ import {
 import { HOME, CART, TABLE, ADD_TABLE, CHECKOUT } from '~/Store/constant';
 import { Home, Cart, Table, Checkout } from '~/Screen';
 import { tableReducer, tableState } from '~/Store/reducer/tableReducer'
-// import { ADD_TABLE, CHECKOUT } from './Store/constant';
 import { cartReducer, checkoutReducer } from './Store/reducer';
 
 const Tab = createBottomTabNavigator();
