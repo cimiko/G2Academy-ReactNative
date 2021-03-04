@@ -14,7 +14,7 @@ import { Context } from '~/App'
 import { HOME, BOOKING_TABLE, ADD_CART } from '~/Store/constant'
 
 function Table({navigation}) {
-    const { table, itemId, setTable, setCart, cart } = useContext(Context)
+    const { table, itemId, setTable, setCart } = useContext(Context)
     const [selectedValue, setSelectedValue] = useState(1);
 
     addCart = async() => {
