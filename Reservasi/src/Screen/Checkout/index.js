@@ -8,13 +8,13 @@ import {
     Text
 } from 'react-native'
 import { Pocha } from '~/Asset/img'
-import { Context } from '~/App'
 import { Divider, Button } from 'react-native-elements'
 import { CART, PAY_TABLE, DELETE_CART } from '~/Store/constant'
+import { useContextProvider } from '~/Store/context'
 
 function Checkout({ navigation }) {
 
-    const { cart, cartId, setTable, setCart } = useContext(Context)
+    const { cart, cartId, setTable, setCart } = useContextProvider()
     const [date, setDate] = useState()
 
     useEffect(() => {
@@ -26,16 +26,17 @@ function Checkout({ navigation }) {
     }, [])
 
     addCheckout = async(x) => {
-        navigation.navigate(CART);
-        setTable(await{
-            type: PAY_TABLE,
-            payload: x
-        })
-
+        
         setCart(await{
             type: DELETE_CART,
             payload: cart[cartId].id
         })
+        
+        setTable(await{
+            type: PAY_TABLE,
+            payload: x
+        })
+        navigation.navigate(CART);
     }
     
     const check = cart.length ?  cart[cartId] : ''

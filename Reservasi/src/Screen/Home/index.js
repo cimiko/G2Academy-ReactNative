@@ -11,11 +11,11 @@ import {
 } from 'react-native'
 import { Card, Tile } from 'react-native-elements'
 import { TABLE } from '~/Store/constant'
-import { Context } from '~/App'
+import { useContextProvider } from '~/Store/context'
 // import { pochaBenhil } from '~/Asset/img'
 
 function Home({ navigation }) {
-    const { table, setItemId } = useContext(Context)
+    const { table, setItemId } = useContextProvider()
 
     const chooseTable = (x) => {
         navigation.navigate(TABLE);

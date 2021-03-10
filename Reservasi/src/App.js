@@ -3,55 +3,31 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import React, { createContext, useEffect, useReducer, useState } from 'react';
+import React from 'react';
 import {
   StatusBar,
 } from 'react-native';
 
-import { HOME, CART, TABLE, ADD_TABLE, CHECKOUT } from '~/Store/constant';
+import { HOME, CART, TABLE, CHECKOUT } from '~/Store/constant';
 import { Home, Cart, Table, Checkout } from '~/Screen';
-import { tableReducer, tableState } from '~/Store/reducer/tableReducer'
-import { cartReducer, checkoutReducer } from './Store/reducer';
+import { ContextProvider } from '~/Store/context'
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
-const Context = createContext();
 
 const App = () => {
-  const [table, setTable] = useReducer(tableReducer, tableState)
-  const [cart, setCart] = useReducer(cartReducer, [])
-  const [checkout, setCheckout] = useReducer(checkoutReducer, [])
-  const [cartId, setCartId] = useState()
-  const [itemId, setItemId] = useState()
-
-  useEffect(() => {
-    setTable({
-      type: ADD_TABLE
-    })
-  }, [])
 
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <Context.Provider value={{
-        table,
-        setTable,
-        itemId,
-        setItemId,
-        cart,
-        setCart,
-        checkout,
-        setCheckout,
-        cartId,
-        setCartId
-      }}>
+      <ContextProvider>
         <NavigationContainer>
           <Tab.Navigator>
             <Tab.Screen name={HOME} component={HomeStackScreen} />
             <Tab.Screen name={CART} component={CartStackScreen} />
           </Tab.Navigator>
         </NavigationContainer>
-      </Context.Provider>
+      </ContextProvider>
     </>
   );
 };
@@ -74,4 +50,4 @@ function CartStackScreen() {
   )
 }
 
-export { App, Context };
+export default App;

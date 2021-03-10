@@ -10,11 +10,11 @@ import {
 } from 'react-native'
 import { Tile, Button } from 'react-native-elements'
 import { pochaBenhil } from '~/Asset/img'
-import { Context } from '~/App'
 import { HOME, BOOKING_TABLE, ADD_CART } from '~/Store/constant'
+import { useContextProvider } from '~/Store/context'
 
 function Table({navigation}) {
-    const { table, itemId, setTable, setCart } = useContext(Context)
+    const { table, itemId, setTable, setCart } = useContextProvider()
     const [selectedValue, setSelectedValue] = useState(1);
 
     addCart = async() => {

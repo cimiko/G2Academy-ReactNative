@@ -8,12 +8,12 @@ import {
     StyleSheet
 } from 'react-native'
 import { ListItem, Avatar } from 'react-native-elements'
-import { Context } from '~/App'
 import { CHECKOUT } from '~/Store/constant'
+import { useContextProvider } from '~/Store/context'
 
 function Cart({navigation}) {
 
-    const { cart, setCartId } = useContext(Context)
+    const { cart, setCartId } = useContextProvider()
 
 
     cartTable = (x) => {
